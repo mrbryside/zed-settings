@@ -31,7 +31,7 @@
       //
 
       // toggle layzygit
-      "space g": ["task::Spawn", { "task_name": "start lazygit" }],
+      "space l": ["task::Spawn", { "task_name": "start lazygit" }],
 
       // Go to file with `gf`
       "g f": "editor::OpenExcerpts",
@@ -84,7 +84,7 @@
       "space x x": "diagnostics::Deploy",
 
       // split pane
-      "space v": "pane::SplitVertical",
+      "space v": "pane::SplitRight",
 
       // delete line
       "space d": "vim::VisualDeleteLine",
@@ -122,7 +122,10 @@
 
       // Fold - Unfold
       "space [": "editor::Fold",
-      "space ]": "editor::UnfoldLines"
+      "space ]": "editor::UnfoldLines",
+
+      // Show Hover
+      "ctrl-i": "editor::Hover"
     }
   },
   {
@@ -146,7 +149,7 @@
     "bindings": {
       // visual, visual line & visual block modes
       "g c": "editor::ToggleComments",
-      "space f": "vim::YankLine",
+      "space f": "vim::VisualYank",
       "cmd-c": "vim::VisualYank",
 
       // surround
@@ -182,8 +185,8 @@
     "context": "Editor",
     "bindings": {
       "ctrl-e": "workspace::ToggleZoom",
+      "cmd-e": "project_panel::ToggleFocus",
       "cmd-s": "workspace::ToggleLeftDock",
-      "cmd-e": "workspace::ActivatePaneLeft",
       "cmd-r": "workspace::ToggleRightDock",
       "cmd-u": "workspace::ToggleBottomDock"
     }
@@ -222,6 +225,8 @@
       "p": "project_panel::Paste",
       "l": "project_panel::OpenPermanent",
       "L": "project_panel::Open",
+      "ctrl-a": "project_panel::CollapseAllEntries",
+
       // Navigate between panel
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
@@ -256,12 +261,12 @@
   },
   // move up down for common menu
   {
-    "context": "vim_mode != normal && vim_mode != visual && vim_mode != insert",
+    "context": "!ProjectPanel && vim_mode != normal && vim_mode != visual && vim_mode != insert",
     "bindings": {
-      "ctrl-j": "editor::MoveDown",
-      "ctrl-k": "editor::MoveUp",
-      "ctrl-h": "editor::MoveLeft",
-      "ctrl-l": "editor::MoveRight"
+      "ctrl-j": ["workspace::SendKeystrokes", "down"],
+      "ctrl-k": ["workspace::SendKeystrokes", "up"],
+      "ctrl-h": ["workspace::SendKeystrokes", "left"],
+      "ctrl-l": ["workspace::SendKeystrokes", "right"]
     }
   },
   // move up down for completion
