@@ -1,0 +1,81 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent": {
+    "single_file_review": true,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
+    },
+    "model_parameters": [],
+    "default_profile": "write",
+    "version": "2"
+  },
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "vim_mode": true,
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
+  "terminal": {
+    "font_family": "Courier New",
+    "font_size": 14
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "gutter": {
+    "folds": false,
+    "runnables": true
+  },
+  "tab_bar": {
+    // disalbe nav <- -> button
+    // "show_nav_history_buttons": false
+    // disable tab bar button (right)
+    "show_tab_bar_buttons": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Gruvbox Dark"
+  },
+  "buffer_font_family": "Courier New",
+  "ui_font_family": "Courier New",
+  "indent_guides": {
+    "enabled": false
+  },
+  "experimental.theme_overrides": {
+    // "tab_bar.background": "#2E2E2E",
+    // "title_bar.background": "#30343D",
+    // "tab_bar.background": "",
+    // "editor.background": "#292C32",
+    // "tab.inactive_background": "#30343D",
+    "background.image_file": "/Users/sirawat/Desktop/test.jpg",
+    "panel.background": "#2E2E2E",
+    "scrollbar.thumb.background": "#30343D",
+    "tab.active_background": "#2E2E2E",
+    "background": "#2E2E2E",
+    "syntax": {
+      "comment": {
+        "color": "#2ea542"
+      },
+      "comment.doc": {
+        "color": "#2ea542"
+      },
+      "string": {
+        "color": "#8ec07c"
+      }
+    }
+  },
+  "project_panel": {},
+  "autosave": "on_focus_change",
+  "relative_line_numbers": true
+}
