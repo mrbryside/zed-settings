@@ -47,7 +47,13 @@
 
       // vim indent
       "tab": "editor::Indent",
-      "shift-tab": "editor::Outdent"
+      "shift-tab": "editor::Outdent",
+
+      // rename
+      "ctrl-r": "editor::Rename",
+
+      // enter to add line
+      "enter": ["workspace::SendKeystrokes", "o escape"]
     }
   },
   {
@@ -204,10 +210,10 @@
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown",
+      "alt-h": "workspace::ActivatePaneLeft",
+      "alt-l": "workspace::ActivatePaneRight",
+      "alt-k": "workspace::ActivatePaneUp",
+      "alt-j": "workspace::ActivatePaneDown",
       "ctrl-n": "workspace::NewTerminal",
       "ctrl-e": "workspace::ToggleZoom"
     }
@@ -226,12 +232,20 @@
       "l": "project_panel::OpenPermanent",
       "L": "project_panel::Open",
       "ctrl-a": "project_panel::CollapseAllEntries",
+      "ctrl-s": "project_panel::CollapseSelectedEntry",
 
       // Navigate between panel
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  // Agent panel
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "alt-h": "workspace::ActivatePaneLeft"
     }
   },
   // Panel nagivation
