@@ -1,41 +1,70 @@
 // Bank Zed settings
 {
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
+  },
+  "cli_default_open_behavior": "new_window",
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "format_on_save": "on",
   // --------------------------- font ---------------------------//
   // for macbook 14"
-  // "ui_font_size": 15,
-  // "buffer_font_size": 15,
-  // "agent_font_size": 15,
+  // "ui_font_size": 16,
+  // "buffer_font_size": 16,
+  // "agent_ui_font_size": 16,
   // "ui_font_family": "Courier New",
   // "buffer_font_family": "Courier New",
-  // "agent_font_family": "Courier New",
   // "terminal": {
-  //   "font_size": 14,
-  //   "font_family": "Courier New"
+  //   "font_size": 15,
+  //   "font_family": "Courier New",
   // },
 
   // for monitor 27"
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "agent_font_size": 16,
+  "ui_font_size": 18,
+  "buffer_font_size": 18,
+  "agent_ui_font_size": 18,
   "ui_font_family": "Courier New",
   "buffer_font_family": "Courier New",
-  "agent_font_family": "Courier New",
   "terminal": {
-    "font_size": 15,
+    "font_size": 17,
     "font_family": "Courier New"
   },
+
+  // for viture
+  // "ui_font_size": 25,
+  // "buffer_font_size": 25,
+  // "agent_font_size": 25,
+  // "ui_font_family": "Courier New",
+  // "buffer_font_family": "Courier New",
+  // "terminal": {
+  //   "font_size": 24,
+  //   "font_family": "Courier New"
+  // },
   // --------------------- agent panel ---------------------//
   "agent": {
-    "default_profile": "write",
+    "dock": "right",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "model": "gpt-5-mini"
     },
-    "version": "2"
+    "default_profile": "write",
+    "model_parameters": []
   },
+  // --------------------- copilot ---------------------------//
+  "show_edit_predictions": false,
   // --------------------- coding setting ---------------------//
   "vim_mode": true,
   "autosave": "on_focus_change",
+  "extend_comment_on_newline": false,
 
   // --------------------- customize appearance ---------------------//
   // -- menu and pane style
@@ -45,8 +74,8 @@
   },
   "toolbar": {
     "breadcrumbs": false,
-    "quick_actions": false,
-    "git_diff": false
+    "quick_actions": false
+    // "git_diff": false,
   },
   "gutter": {
     "folds": false,
@@ -54,9 +83,9 @@
   },
   "git": {
     "inline_blame": {
-      "enabled": false
+      "enabled": true
     },
-    "git_gutter": "hide" // remove annoying git indicator in front of line number
+    "git_gutter": "tracked_files" // remove annoying git indicator in front of line number
   },
   "tab_bar": {
     // "show_nav_history_buttons": false // disalbe nav <- -> button
@@ -64,10 +93,11 @@
   },
   "scrollbar": {
     "show": "auto",
-    "git_diff": false
+    "git_diff": true
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "project_panel": {
+    "dock": "left",
     "scrollbar": {
       "show": "never"
     }
@@ -86,24 +116,150 @@
     "dark": "Gruvbox Dark"
   },
   "experimental.theme_overrides": {
-    // "editor.background": "#292C32",
-    // "tab.inactive_background": "#30343D",
-    // "tab.active_background": "#2E2E2E",
-    "status_bar.background": "#393735", // this is bottom bar
-    "title_bar.background": "#393735",
-    "tab_bar.background": "#282828",
-    "panel.background": "#282828",
-    "scrollbar.thumb.background": "#30343D",
-    "background": "#2E2E2E",
+    "terminal.background": "#1B1B1E",
+    "created": "#A9B665",
+    "created.background": "#242A1A",
+    "modified": "#D8A657",
+    "modified.background": "#31281A",
+    "deleted": "#D3866B",
+    "deleted.background": "#33211F",
+    "renamed": "#89B482",
+    "renamed.background": "#22302B",
+    "conflict": "#C2854F",
+    "conflict.background": "#32261C",
+    "background": "#1B1B1E",
+    "editor.background": "#1B1B1E",
+    "panel.background": "#1B1B1E",
+    "tab_bar.background": "#202023",
+    "tab.active_background": "#1B1B1E",
+    "tab.inactive_background": "#202023",
+    "title_bar.background": "#202023",
+    "status_bar.background": "#202023",
+    "editor.subheader.background": "#202023",
+    "editor.gutter.background": "#1B1B1E",
+    "editor.active_line.background": "#232328",
+    "element.background": "#1F1F23",
+    "element.hover": "#28282D",
+    "ghost_element.hover": "#28282D",
+    "element.active": "#303038",
+    "ghost_element.active": "#303038",
+    "elevated_surface.background": "#1D1D21",
+    "border.variant": "#2E2E33",
+    "border": "#35353B",
+    "scrollbar.thumb.background": "#3A3A42",
     "syntax": {
+      "text.literal": {
+        "color": "#9BCF8F"
+      },
+      "title": {
+        "color": "#FB4934"
+      },
       "comment": {
-        "color": "#2ea542"
+        "color": "#5FAF6B"
       },
       "comment.doc": {
-        "color": "#2ea542"
+        "color": "#5FAF6B"
       },
       "string": {
-        "color": "#8ec07c"
+        "color": "#9BCF8F"
+      },
+      "function": {
+        "color": "#86A29A"
+      }
+    }
+  },
+  // "theme": {
+  //   "mode": "system",
+  //   "light": "One Light",
+  //   "dark": "Gruvbox Dark",
+  // },
+  // "experimental.theme_overrides": {
+  //   // "editor.background": "#292C32",
+  //   // "tab.inactive_background": "#30343D",
+  //   // "tab.active_background": "#2E2E2E",
+  //   "status_bar.background": "#393735", // this is bottom bar
+  //   "title_bar.background": "#393735",
+  //   "tab_bar.background": "#282828",
+  //   "panel.background": "#282828",
+  //   "scrollbar.thumb.background": "#30343D",
+  //   "background": "#2E2E2E",
+  //   "syntax": {
+  //     "comment": {
+  //       "color": "#2ea542",
+  //     },
+  //     "comment.doc": {
+  //       "color": "#2ea542",
+  //     },
+  //     "string": {
+  //       "color": "#8ec07c",
+  //     },
+  //   },
+  // },
+  // -- language server settings
+
+  "languages": {
+    // for javascipt framework
+    "Vue.js": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on"
+    },
+    "Go": {
+      "language_servers": ["gopls"],
+      "format_on_save": "on"
+    }
+  },
+  "inlay_hints": {
+    // scala
+    "enabled": true,
+    "show_type_hints": false,
+    "show_parameter_hints": false,
+    "show_other_hints": true,
+    "show_background": false,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50
+  },
+  "lsp": {
+    // scala
+    "metals": {
+      "settings": {
+        "inlayHints": {
+          "inferredTypes": {
+            "enable": true
+          },
+          "implicitArguments": {
+            "enable": true
+          },
+          "implicitConversions": {
+            "enable": true
+          },
+          "typeParameters": {
+            "enable": true
+          },
+          "hintsInPatternMatch": {
+            "enable": true
+          }
+        }
+      }
+    },
+    // python
+    "pyright": {
+      "settings": {
+        "python.analysis.typeCheckingMode": "off"
       }
     }
   }
